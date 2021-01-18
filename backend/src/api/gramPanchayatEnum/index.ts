@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/gram-panchayat-enum`,
+    require('./gramPanchayatEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/gram-panchayat-enum/:id`,
+    require('./gramPanchayatEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/gram-panchayat-enum/import`,
+    require('./gramPanchayatEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/gram-panchayat-enum`,
+    require('./gramPanchayatEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/gram-panchayat-enum/autocomplete`,
+    require('./gramPanchayatEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/gram-panchayat-enum`,
+    require('./gramPanchayatEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/gram-panchayat-enum/:id`,
+    require('./gramPanchayatEnumFind').default,
+  );
+};

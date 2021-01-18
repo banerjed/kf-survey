@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/livelihood-survey`,
+    require('./livelihoodSurveyCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/livelihood-survey/:id`,
+    require('./livelihoodSurveyUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/livelihood-survey/import`,
+    require('./livelihoodSurveyImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/livelihood-survey`,
+    require('./livelihoodSurveyDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/livelihood-survey/autocomplete`,
+    require('./livelihoodSurveyAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/livelihood-survey`,
+    require('./livelihoodSurveyList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/livelihood-survey/:id`,
+    require('./livelihoodSurveyFind').default,
+  );
+};

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/village-enum`,
+    require('./villageEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/village-enum/:id`,
+    require('./villageEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/village-enum/import`,
+    require('./villageEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/village-enum`,
+    require('./villageEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/village-enum/autocomplete`,
+    require('./villageEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/village-enum`,
+    require('./villageEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/village-enum/:id`,
+    require('./villageEnumFind').default,
+  );
+};

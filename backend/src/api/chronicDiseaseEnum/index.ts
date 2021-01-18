@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/chronic-disease-enum`,
+    require('./chronicDiseaseEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/chronic-disease-enum/:id`,
+    require('./chronicDiseaseEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/chronic-disease-enum/import`,
+    require('./chronicDiseaseEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/chronic-disease-enum`,
+    require('./chronicDiseaseEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/chronic-disease-enum/autocomplete`,
+    require('./chronicDiseaseEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/chronic-disease-enum`,
+    require('./chronicDiseaseEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/chronic-disease-enum/:id`,
+    require('./chronicDiseaseEnumFind').default,
+  );
+};

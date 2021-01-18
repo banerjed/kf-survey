@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/health-survey`,
+    require('./healthSurveyCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/health-survey/:id`,
+    require('./healthSurveyUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/health-survey/import`,
+    require('./healthSurveyImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/health-survey`,
+    require('./healthSurveyDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-survey/autocomplete`,
+    require('./healthSurveyAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-survey`,
+    require('./healthSurveyList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/health-survey/:id`,
+    require('./healthSurveyFind').default,
+  );
+};

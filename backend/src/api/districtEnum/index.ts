@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/district-enum`,
+    require('./districtEnumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/district-enum/:id`,
+    require('./districtEnumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/district-enum/import`,
+    require('./districtEnumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/district-enum`,
+    require('./districtEnumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/district-enum/autocomplete`,
+    require('./districtEnumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/district-enum`,
+    require('./districtEnumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/district-enum/:id`,
+    require('./districtEnumFind').default,
+  );
+};
